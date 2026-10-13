@@ -17,5 +17,25 @@ const tools = [
   designedFor: ["..."],       // list of strings
   notDesignedFor: ["..."],    // list of strings
   video: ""                   // string: link, or empty if none yet
-}
+},
+
+{
+  id: "bandsaw",
+  name: "Bandsaw",
+
+  
+  materials: ["wood",],
+  objectives: ["curved cuts"],
+  precision: 3,
+  maxThickness: 3,
+  maxSize: 1,
+
+  
+  summary: "...",
+  operation: ["...", "..."],
+  safety: ["...", "..."],
+  designedFor: ["..."],
+  notDesignedFor: ["..."],
+  video: ""
+},
 ]
