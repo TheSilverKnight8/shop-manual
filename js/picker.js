@@ -8,6 +8,10 @@ function findTools(choices) {
   });
 }
 
+const matSelect = document.getElementById("material");
+const goButton = document.getElementById("go");
+const resultsList = document.getElementById("results");
+
 const allMats = tools.flatMap(function (b) { return b.materials; });
 // ["wood", "acrylic"]  (with duplicates if several tools share one)
 
@@ -21,10 +25,6 @@ uniqueMats.forEach(function (m) {
   matSelect.appendChild(option);
 });
 
-const matSelect = document.getElementById("material");
-const goButton = document.getElementById("go");
-const resultsList = document.getElementById("results");
-
 goButton.addEventListener("click", function () {
   const picked = matSelect.value;           // always a string
   const found = tools.filter(function (b) { return b.materials.includes(picked); });
@@ -34,7 +34,7 @@ goButton.addEventListener("click", function () {
     const li = document.createElement("li");
     const a = document.createElement("a");
     a.href = "tool.html?id=" + b.id;          // link to the entry page
-    a.textContent = b.title;
+    a.textContent = b.name;
     li.appendChild(a);
     resultsList.appendChild(li);
   });
