@@ -75,7 +75,7 @@ const precSelect = document.getElementById("precision");
 const goButton3 = document.getElementById("go");
 const resultsList3 = document.getElementById("results");
 
-const allPrecs = tools.flatMap(function (b) { return b.precisions; });
+const allPrecs = tools.flatMap(function (b) { return b.precision; });
 
 const uniquePrecs = Array.from(new Set(allPrecs)).sort();
 // removes duplicates, then sorts alphabetically
