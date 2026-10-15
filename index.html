@@ -1,32 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Manual</title>
-</head>
-<body>
-    <h1>Shop Manual</h1>
+<h1>Shop Manual</h1>
 
+<label>Material
     <select id="material">
         <option value="">Choose…</option>
     </select>
+</label>
+<label>Objective
     <select id="objective">
         <option value="">Choose…</option>
     </select>
+</label>
+<label>Precision
     <select id="precision">
         <option value="">Choose…</option>
+        <option value="1">Rough</option>
+        <option value="2">Medium</option>
+        <option value="3">Fine</option>
     </select>
+</label>
+<label>Thickness
     <select id="maxThickness">
         <option value="">Choose…</option>
+        <option value="0.5">Up to ½ in</option>
+        <option value="1">Up to 1 in</option>
+        <option value="2">Up to 2 in</option>
+        <option value="4">Up to 4 in</option>
+        <option value="6">Up to 6 in</option>
     </select>
+</label>
+<label>Size
     <select id="maxSize">
         <option value="">Choose…</option>
+        <option value="1">Small</option>
+        <option value="2">Medium</option>
+        <option value="3">Large</option>
     </select>
-    <button id="go">Search</button>
-    <ul id="results"></ul>
+</label>
 
-    <script src="data/tools.js"></script>
-    <script src="js/picker.js"></script>
-</body>
-</html>
+<button id="go">Search</button>
+<p id="message"></p>
+<ul id="results"></ul>
+
+<script src="data/tools.js"></script>
+<script src="js/picker.js"></script>
