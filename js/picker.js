@@ -45,7 +45,6 @@ const goButton2 = document.getElementById("go");
 const resultsList2 = document.getElementById("results");
 
 const allObjs = tools.flatMap(function (b) { return b.objectives; });
-// ["wood", "acrylic"]  (with duplicates if several tools share one)
 
 const uniqueObjs = Array.from(new Set(allObjs)).sort();
 // removes duplicates, then sorts alphabetically
@@ -77,7 +76,6 @@ const goButton3 = document.getElementById("go");
 const resultsList3 = document.getElementById("results");
 
 const allPrecs = tools.flatMap(function (b) { return b.precisions; });
-// ["wood", "acrylic"]  (with duplicates if several tools share one)
 
 const uniquePrecs = Array.from(new Set(allPrecs)).sort();
 // removes duplicates, then sorts alphabetically
