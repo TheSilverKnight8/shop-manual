@@ -15,6 +15,9 @@ const goButton = document.getElementById("go");
 const message = document.getElementById("message");
 const resultsList = document.getElementById("results");
 
+fillOptions(matSelect, tools.flatMap(function (b) { return b.materials; }));
+fillOptions(objSelect, tools.flatMap(function (b) { return b.objectives; }));
+
 function readPositive(input) {
   const n = Number(input.value);          // "" becomes 0, text becomes NaN
   if (input.value === "" || isNaN(n) || n <= 0) {
@@ -44,9 +47,6 @@ function fillOptions(select, values) {
     select.appendChild(option);
   });
 }
-
-fillOptions(matSelect, tools.flatMap(function (b) { return b.materials; }));
-fillOptions(objSelect, tools.flatMap(function (b) { return b.objectives; }));
 
 goButton.addEventListener("click", function () {
   message.textContent = "";
