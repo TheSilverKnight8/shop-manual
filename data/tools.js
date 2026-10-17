@@ -7,8 +7,9 @@ const tools = [
   materials: ["wood", "acrylic", "polycarbonate"],       // list of strings
   objectives: ["straight bore"], // list of strings
   precision: 3,               // number: 1 = rough, 2 = medium, 3 = fine
-  maxThickness: 5,            // number
-  maxSize: 2,                // number
+  maxThickness: 5,            // number (inches)
+  maxLong: 9999,                // number (inches)
+  maxWide: 9999,                 // number (inches)
 
   // entry content (what the tool page shows)
   summary: "...",             // string: one or two sentences on what it is
@@ -28,9 +29,9 @@ const tools = [
   objectives: ["curved cuts"],
   precision: 3,
   maxThickness: 3,
-  maxSize: 1,
+  maxLong: 9999,
+  maxWide: 9999,
 
-  
   summary: "...",
   operation: ["...", "..."],
   safety: ["...", "..."],

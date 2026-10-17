@@ -11,13 +11,30 @@ function findTools(choices) {
 const matSelect = document.getElementById("material");
 const objSelect = document.getElementById("objective");
 const precSelect = document.getElementById("precision");
-const thicSelect = document.getElementById("maxThickness");
-const sizeSelect = document.getElementById("maxSize");
 const goButton = document.getElementById("go");
 const message = document.getElementById("message");
 const resultsList = document.getElementById("results");
 
-// The block you wrote twice, written once.
+function readPositive(input) {
+  const n = Number(input.value);          // "" becomes 0, text becomes NaN
+  if (input.value === "" || isNaN(n) || n <= 0) {
+    return null;                          // "this box is invalid"
+  }
+  return n;                               // otherwise, hand back the number
+}
+
+const w = readPositive(weightInput);
+const h = readPositive(heightInput);
+const t = readPositive(thicknessInput);
+
+if (w === null || h === null || t === null) {
+  message.textContent = "Enter a number greater than 0 in every box.";
+  return;
+}
+
+const long = Math.max(w, h);
+const wide = Math.min(w, h);
+
 function fillOptions(select, values) {
   const unique = Array.from(new Set(values)).sort();
   unique.forEach(function (v) {

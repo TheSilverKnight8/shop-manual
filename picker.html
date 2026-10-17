@@ -26,23 +26,14 @@
             <option value="3">Fine</option>
         </select>
     </label>
-    <label>Thickness
-        <select id="maxThickness">
-            <option value="">Choose…</option>
-            <option value="0.5">Up to ½ in</option>
-            <option value="1">Up to 1 in</option>
-            <option value="2">Up to 2 in</option>
-            <option value="4">Up to 4 in</option>
-            <option value="6">Up to 6 in</option>
-        </select>
+    <label>Max thickness (inches, full piece)
+        <input type="number" id="thickness" min="0" step="any">
     </label>
-    <label>Size
-        <select id="maxSize">
-            <option value="">Choose…</option>
-            <option value="1">Small</option>
-            <option value="2">Medium</option>
-            <option value="3">Large</option>
-        </select>
+    <label>Max length (inches, full piece)
+        <input type="number" id="long" min="0" step="any">
+    </label>
+    <label>Max width (inches, full piece)
+        <input type="number" id="wide" min="0" step="any">
     </label>
 
     <button id="go">Search</button>
