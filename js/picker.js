@@ -3,14 +3,18 @@ function findTools(choices) {
     return b.materials.includes(choices.material) &&
            b.objectives.includes(choices.objective) &&
            b.precision >= choices.minPrecision &&
-           b.maxThickness >= choices.minThickness &&
-           b.maxSize >= choices.minSize;
+           b.maxThickness >= choices.thickness &&
+           b.maxLong >= choices.long &&
+           b.maxWide >= choices.wide;
   });
 }
 
 const matSelect = document.getElementById("material");
 const objSelect = document.getElementById("objective");
 const precSelect = document.getElementById("precision");
+const thickInput = document.getElementById("thickness");
+const lengthInput = document.getElementById("long");
+const widthInput = document.getElementById("wide");
 const goButton = document.getElementById("go");
 const message = document.getElementById("message");
 const resultsList = document.getElementById("results");
@@ -36,35 +40,32 @@ function readPositive(input) {
   return n;                               // otherwise, hand back the number
 }
 
-const w = readPositive(weightInput);
-const h = readPositive(heightInput);
-const t = readPositive(thicknessInput);
-
-if (w === null || h === null || t === null) {
-  message.textContent = "Enter a number greater than 0 in every box.";
-  return;
-}
-
-const long = Math.max(w, h);
-const wide = Math.min(w, h);
-
 goButton.addEventListener("click", function () {
   message.textContent = "";
   resultsList.innerHTML = "";
 
   if (matSelect.value === "" || objSelect.value === "" ||
-      precSelect.value === "" || thicSelect.value === "" ||
-      sizeSelect.value === "") {
-    message.textContent = "Choose an option in every box.";
-    return;                                   // stop here
+      precSelect.value === "") {
+    message.textContent = "Choose a material, objective, and precision.";
+    return;
+  }
+
+  const thick = readPositive(thickInput);
+  const len = readPositive(lengthInput);
+  const wid = readPositive(widthInput);
+
+  if (thick === null || len === null || wid === null) {
+    message.textContent = "Enter a number greater than 0 in every size box.";
+    return;
   }
 
   const found = findTools({
     material: matSelect.value,
     objective: objSelect.value,
     minPrecision: Number(precSelect.value),
-    minThickness: Number(thicSelect.value),
-    minSize: Number(sizeSelect.value)
+    thickness: thick,
+    long: Math.max(len, wid),
+    wide: Math.min(len, wid)
   });
 
   if (found.length === 0) {
