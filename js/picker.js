@@ -15,6 +15,16 @@ const goButton = document.getElementById("go");
 const message = document.getElementById("message");
 const resultsList = document.getElementById("results");
 
+function fillOptions(select, values) {
+  const unique = Array.from(new Set(values)).sort();
+  unique.forEach(function (v) {
+    const option = document.createElement("option");
+    option.value = v;
+    option.textContent = v;
+    select.appendChild(option);
+  });
+}
+
 fillOptions(matSelect, tools.flatMap(function (b) { return b.materials; }));
 fillOptions(objSelect, tools.flatMap(function (b) { return b.objectives; }));
 
@@ -37,16 +47,6 @@ if (w === null || h === null || t === null) {
 
 const long = Math.max(w, h);
 const wide = Math.min(w, h);
-
-function fillOptions(select, values) {
-  const unique = Array.from(new Set(values)).sort();
-  unique.forEach(function (v) {
-    const option = document.createElement("option");
-    option.value = v;
-    option.textContent = v;
-    select.appendChild(option);
-  });
-}
 
 goButton.addEventListener("click", function () {
   message.textContent = "";
