@@ -155,7 +155,7 @@ const tools = [
   name: "Impact Driver",
 
   
-  materials: ["wood",],
+  materials: ["wood", "acrylic", "polycarbonate"],
   objectives: ["driving screws"],
   precision: 2,
   maxThickness: 5,
@@ -489,8 +489,8 @@ const tools = [
   objectives: ["straight cuts", "long cuts"],
   precision: 2,
   maxThickness: 3.125,
-  maxLong: 9999,
-  maxWide: 25.5,
+  maxLong: 96,
+  maxWide: 48,
 
   summary: "A 10 in table saw with a safety brake. The brake stops the blade if the blade touches skin. It makes accurate straight cuts.",
   operation: [
@@ -539,8 +539,8 @@ const tools = [
   objectives: ["straight cuts", "long cuts"],
   precision: 3,
   maxThickness: 2.125,
-  maxLong: 48,
-  maxWide: 36,
+  maxLong: 9999,
+  maxWide: 9999,
 
   summary: "A battery-powered 6-1/2 in plunge saw that moves along a guide track. It makes clean, straight cuts in large sheets.",
   operation: [
@@ -583,11 +583,11 @@ const tools = [
 
   
   materials: ["metal",],
-  objectives: ["surface finishing"],
+  objectives: ["surface finishing", "sharpening"],
   precision: 1,
   maxThickness: 9999,
-  maxLong: 10,
-  maxWide: 10,
+  maxLong: 9999,
+  maxWide: 9999,
 
   summary: "A bench machine with two 8 in abrasive wheels. It sharpens tools, removes burrs, and shapes small metal parts.",
   operation: [
@@ -632,7 +632,7 @@ const tools = [
   
   materials: ["metal",],
   objectives: ["straight cuts", "surface finishing"],
-  precision: 2,
+  precision: 3,
   maxThickness: 3,
   maxLong: 9999,
   maxWide: 9999,
@@ -683,11 +683,11 @@ const tools = [
   materials: ["metal",],
   objectives: ["precise cuts"],
   precision: 3,
-  maxThickness: 0.39,
+  maxThickness: 0.25,
   maxLong: 24,
   maxWide: 24,
 
-  summary: "A 1200 W fiber laser on a CNC cutter table. It cuts carbon steel sheet up to 0.39 in thick in a 24 x 24 in area.",
+  summary: "A 1200 W fiber laser on a CNC cutter table. It cuts carbon steel sheet up to 0.25 in thick in a 24 x 24 in area.",
   operation: [
     "Get approval from the Laser Safety Officer before you use the machine.",
     "Put on laser safety goggles, heat-resistant gloves, and long sleeves.",
@@ -712,13 +712,12 @@ const tools = [
     "After the job, turn off 'Enable lasering' to prevent an accidental laser emission."
   ],
   designedFor: [
-    "Precise cuts in steel, stainless steel, aluminum, and brass sheet",
     "Complex flat shapes",
     "Many parts from one file"
   ],
   notDesignedFor: [
     "Wood, plastic, or other materials that are not metal",
-    "Metal thicker than 0.39 in",
+    "Metal thicker than 0.25 in",
     "Parts larger than 24 x 24 in",
     "Use without a trained operator"
   ],
