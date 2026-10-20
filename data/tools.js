@@ -7,16 +7,48 @@ const tools = [
   materials: ["wood", "acrylic", "polycarbonate"],       // list of strings
   objectives: ["straight bore"], // list of strings
   precision: 3,               // number: 1 = rough, 2 = medium, 3 = fine
-  maxThickness: 5,            // number (inches)
+  maxThickness: 3,            // number (inches)
   maxLong: 9999,                // number (inches)
   maxWide: 9999,                 // number (inches)
 
   // entry content (what the tool page shows)
-  summary: "...",             // string: one or two sentences on what it is
-  operation: ["...", "..."],  // list of strings: the steps, in order
-  safety: ["...", "..."],     // list of strings
-  designedFor: ["..."],       // list of strings
-  notDesignedFor: ["..."],    // list of strings
+  summary: "A stationary drill on a column. It drills straight holes at an exact location and depth. This model has a laser guide and a speed display.",             // string: one or two sentences on what it is
+  operation: [
+    "Put on safety glasses and hearing protection.",
+    "Set the power switch to OFF before you make adjustments.",
+    "Install the correct drill bit in the chuck. Tighten the chuck with the chuck key.",
+    "Remove the chuck key from the chuck.",
+    "Put a scrap board below the workpiece.",
+    "Attach the workpiece to the table with a clamp or a vise.",
+    "Adjust the table height and the depth stop.",
+    "Set the speed for the bit diameter and the material.",
+    "Set the power switch to ON. Let the spindle get to full speed.",
+    "Lower the bit slowly with the feed handle. Do not apply too much force.",
+    "Decrease the force when the bit comes through the bottom of the workpiece.",
+    "Raise the bit. Then set the power switch to OFF.",
+    "Remove the chips with a brush after the spindle stops."
+  ],  // list of strings: the steps, in order
+  safety: [
+    "Wear safety glasses at all times.",
+    "Do not wear gloves, loose clothing, or jewelry. Tie back long hair.",
+    "Always hold the workpiece with a clamp or a vise. Do not hold it with your hand.",
+    "Keep your hands a minimum of 4 in from the bit.",
+    "Do not leave the chuck key in the chuck.",
+    "If the bit jams, set the power switch to OFF. Then turn the chuck backward by hand.",
+    "Do not touch the bit or the chips after you drill. They can be hot.",
+    "Do not leave the machine when it operates."
+  ],  // list of strings
+  designedFor: [
+    "Straight holes at 90 degrees to the surface",
+    "Holes at an exact depth",
+    "Many holes at exact locations in wood and plastic"
+  ],    // list of strings
+  notDesignedFor: [
+    "Metal",
+    "Workpieces that you cannot attach to the table",
+    "Holes deeper than 3 in in one stroke",
+    "Side cuts or milling"
+  ],    // list of strings
   video: ""                   // string: link, or empty if none yet
 },
 
@@ -28,15 +60,45 @@ const tools = [
   materials: ["wood", "acrylic", "polycarbonate"],
   objectives: ["curved cuts"],
   precision: 3,
-  maxThickness: 3,
+  maxThickness: 3.5,
   maxLong: 9999,
-  maxWide: 9999,
+  maxWide: 9,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A saw with a thin, continuous blade that moves down through a table. It cuts curves and small, thick stock. It has a 9 in throat.",
+  operation: [
+    "Put on safety glasses.",
+    "Make sure that the blade tension is correct and the blade guides are adjusted.",
+    "Draw the cut line on the workpiece.",
+    "Plan the cut so that you do not have to pull the blade back out of a curve.",
+    "Make relief cuts before you cut tight curves.",
+    "Lower the upper blade guard to approximately 1/4 in above the workpiece.",
+    "Set the power switch to ON. Let the blade get to full speed.",
+    "Put the flat side of the workpiece on the table.",
+    "Push the workpiece slowly into the blade. Keep your hands on the two sides of the cut line.",
+    "Use a push stick for small pieces.",
+    "Set the power switch to OFF. Wait for the blade to stop before you remove waste pieces."
+  ],
+  safety: [
+    "Wear safety glasses at all times.",
+    "Keep your hands a minimum of 4 in from the blade.",
+    "Do not cross your arms during a cut.",
+    "Do not reach across the blade.",
+    "Do not cut stock that does not have a flat surface on the table.",
+    "Do not cut wood that contains nails, screws, or other metal.",
+    "If the blade breaks, stand clear and set the power switch to OFF.",
+    "Do not remove waste pieces until the blade stops."
+  ],
+  designedFor: [
+    "Curves and irregular shapes",
+    "Small stock up to 3-1/2 in thick",
+    "Rip cuts and crosscuts in small stock"
+  ],
+  notDesignedFor: [
+    "Metal",
+    "Long, accurate straight cuts",
+    "Stock wider than the 9 in throat",
+    "Round stock that you cannot hold flat"
+  ],
   video: ""
 },
 
@@ -52,11 +114,39 @@ const tools = [
   maxLong: 9999,
   maxWide: 9999,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A compact, battery-powered drill and driver. It drills holes and drives small screws. It has a 1/2 in chuck and a clutch.",
+  operation: [
+    "Put on safety glasses.",
+    "Remove the battery before you change the bit.",
+    "Put the bit in the chuck. Turn the chuck until it is tight.",
+    "Install the battery.",
+    "Select speed 1 for screws and large bits. Select speed 2 for small bits.",
+    "Set the clutch to the drill symbol to drill holes. Set a low clutch number to drive screws.",
+    "Attach the workpiece with a clamp.",
+    "Mark the hole. Put the tip of the bit on the mark.",
+    "Start slowly. Then increase the speed.",
+    "Keep the drill straight. Push with a constant force.",
+    "Keep the bit turning as you remove it from the hole."
+  ],
+  safety: [
+    "Wear safety glasses.",
+    "Do not wear gloves, loose clothing, or jewelry near the chuck.",
+    "Hold the workpiece with a clamp. Do not hold small parts with your hand.",
+    "Hold the drill firmly. The drill can twist if the bit jams.",
+    "Remove the battery before you change the bit.",
+    "Do not touch the bit after use. It can be hot."
+  ],
+  designedFor: [
+    "Holes in wood and plastic",
+    "Holes in locations where a drill press cannot go",
+    "Small screws that need torque control"
+  ],
+  notDesignedFor: [
+    "Metal",
+    "Masonry or concrete",
+    "Long screws or lag bolts (use the impact driver)",
+    "Holes that must be exactly 90 degrees to the surface (use the drill press)"
+  ],
   video: ""
 },
 
@@ -72,11 +162,37 @@ const tools = [
   maxLong: 9999,
   maxWide: 9999,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A compact, battery-powered driver. It adds rotational impacts to drive screws and bolts with high torque.",
+  operation: [
+    "Put on safety glasses and hearing protection.",
+    "Remove the battery before you change the bit.",
+    "Push a 1/4 in hex impact bit fully into the collar.",
+    "Pull on the bit to make sure that it is locked.",
+    "Install the battery.",
+    "Set the direction switch to forward.",
+    "Put the bit fully into the screw head. Hold the driver straight.",
+    "Squeeze the trigger slowly at first.",
+    "Release the trigger when the screw head is flush with the surface."
+  ],
+  safety: [
+    "Wear safety glasses and hearing protection.",
+    "Use only impact-rated bits. Other bits can break.",
+    "Keep your hands away from the bit and from the point of the screw.",
+    "Hold the workpiece with a clamp.",
+    "Do not drive screws too far. Too much torque can break the screw or damage the material.",
+    "Do not touch the bit after use. It can be hot."
+  ],
+  designedFor: [
+    "Long screws in wood",
+    "Lag bolts",
+    "A large quantity of screws"
+  ],
+  notDesignedFor: [
+    "Holes (use the drill)",
+    "Small or delicate screws",
+    "Thin or brittle material",
+    "Metal"
+  ],
   video: ""
 },
 
@@ -92,11 +208,37 @@ const tools = [
   maxLong: 9999,
   maxWide: 9999,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A handheld, corded saw with a short blade that moves up and down. It cuts curves and internal cutouts in sheet material.",
+  operation: [
+    "Put on safety glasses and hearing protection.",
+    "Disconnect the plug before you change the blade.",
+    "Install a blade that is correct for the material. Use a fine-tooth blade for plastic.",
+    "Make sure that the blade extends below the bottom of the workpiece.",
+    "Attach the workpiece to the bench with a clamp. Make sure that the cut line is clear of the bench.",
+    "Set the orbital action to 0 for plastic and for accurate cuts.",
+    "Put the front of the shoe flat on the workpiece. Make sure that the blade does not touch the workpiece.",
+    "Squeeze the trigger. Let the blade get to full speed.",
+    "Push the saw slowly along the line. Keep the shoe flat.",
+    "Release the trigger. Wait until the blade stops before you lift the saw."
+  ],
+  safety: [
+    "Wear safety glasses and hearing protection.",
+    "Keep your hands away from the cut line and from the area below the workpiece.",
+    "Hold the saw only by the insulated grip surfaces. The blade can touch hidden wires.",
+    "Disconnect the plug before you change the blade.",
+    "Do not put the saw down until the blade stops.",
+    "Do not touch the blade after a cut. It can be hot."
+  ],
+  designedFor: [
+    "Curves and irregular shapes",
+    "Internal cutouts",
+    "Cuts in large sheets that do not fit on the bandsaw"
+  ],
+  notDesignedFor: [
+    "Long, accurate straight cuts",
+    "Stock thicker than 2 in",
+    "Metal"
+  ],
   video: ""
 },
 
@@ -108,15 +250,43 @@ const tools = [
   materials: ["wood",],
   objectives: ["straight cuts"],
   precision: 3,
-  maxThickness: 6,
+  maxThickness: 3.5,
   maxLong: 9999,
-  maxWide: 6,
+  maxWide: 7.25,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A 12 in circular saw on a pivot arm. It makes accurate crosscuts, miter cuts, and bevel cuts in wood.",
+  operation: [
+    "Put on safety glasses and hearing protection.",
+    "Set the miter angle and the bevel angle. Lock the two adjustments.",
+    "Put the workpiece flat on the table and against the fence.",
+    "Attach the workpiece with the material clamp.",
+    "Make sure that your hands are out of the blade path.",
+    "Squeeze the trigger. Let the blade get to full speed.",
+    "Lower the blade slowly through the workpiece.",
+    "Release the trigger. Keep the blade down until it stops.",
+    "Raise the arm. Then remove the workpiece."
+  ],
+  safety: [
+    "Wear safety glasses and hearing protection.",
+    "Keep your hands out of the blade path.",
+    "Do not cross your arms during a cut.",
+    "Always hold the workpiece against the fence. Do not cut freehand.",
+    "Do not cut pieces that are too small to clamp.",
+    "Do not reach under or behind the blade before it stops.",
+    "Do not make cuts along the grain.",
+    "Make sure that the blade guard moves freely."
+  ],
+  designedFor: [
+    "Crosscuts in boards and trim",
+    "Miter cuts and bevel cuts",
+    "Many cuts to the same length"
+  ],
+  notDesignedFor: [
+    "Rip cuts (cuts along the grain)",
+    "Boards wider than the saw capacity",
+    "Pieces too small to clamp",
+    "Metal or plastic"
+  ],
   video: ""
 },
 
@@ -132,11 +302,38 @@ const tools = [
   maxLong: 10,
   maxWide: 10,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A bench sander with a 4 x 36 in belt and a 6 in disc. It removes material quickly and shapes edges.",
+  operation: [
+    "Put on safety glasses and a dust mask.",
+    "Connect the dust collection.",
+    "Examine the belt for tears. Make sure that the belt is in the center of the rollers.",
+    "Adjust the work support. The gap to the belt or the disc must be 1/16 in maximum.",
+    "Insert the switch key. Set the switch to ON. Let the sander get to full speed.",
+    "Hold the workpiece firmly against the work support.",
+    "Push the workpiece lightly against the belt. Move it across the belt.",
+    "On the disc, sand only on the half that moves down.",
+    "Set the switch to OFF. Remove the switch key."
+  ],
+  safety: [
+    "Wear safety glasses and a dust mask.",
+    "Do not wear gloves, loose clothing, or jewelry.",
+    "Keep your fingers away from the belt and the disc.",
+    "Do not sand pieces that are too small to hold safely.",
+    "Do not sand on the half of the disc that moves up. The disc can throw the workpiece.",
+    "Do not sand metal. Sparks can ignite wood dust.",
+    "Make adjustments only when the sander is stopped and disconnected."
+  ],
+  designedFor: [
+    "Fast material removal on wood",
+    "Edges, ends, and outside curves",
+    "Small workpieces that you can hold by hand"
+  ],
+  notDesignedFor: [
+    "Metal",
+    "Fine smooth surfaces (use the palm sander)",
+    "Very small pieces",
+    "Large panels"
+  ],
   video: ""
 },
 
@@ -152,11 +349,37 @@ const tools = [
   maxLong: 9999,
   maxWide: 9999,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A 5 in, battery-powered random orbital sander. It makes surfaces smooth before you apply a finish.",
+  operation: [
+    "Put on safety glasses and a dust mask.",
+    "Remove the battery.",
+    "Align the holes in the sanding disc with the holes in the pad. Push the disc onto the pad.",
+    "Attach the dust bag or a vacuum.",
+    "Install the battery.",
+    "Set the speed dial.",
+    "Start with a coarse grit. Then change to finer grits.",
+    "Start the sander. Then put the pad flat on the workpiece.",
+    "Move the sander slowly over the surface. Use light pressure.",
+    "Lift the sander from the surface. Then stop it."
+  ],
+  safety: [
+    "Wear safety glasses and a dust mask.",
+    "Use dust collection. Wood dust is a health hazard.",
+    "Do not sand lead paint or other dangerous coatings.",
+    "Hold the workpiece with a clamp.",
+    "Do not put the sander down until the pad stops.",
+    "Keep hair and clothing away from the pad."
+  ],
+  designedFor: [
+    "Smooth surfaces before a finish",
+    "Flat and slightly curved surfaces",
+    "Removal of tool marks and scratches"
+  ],
+  notDesignedFor: [
+    "Removal of large quantities of material (use the belt sander)",
+    "Changes to the shape of a part",
+    "Sharp inside corners"
+  ],
   video: ""
 },
 
@@ -168,15 +391,40 @@ const tools = [
   materials: ["wood", "metal", "acrylic", "polycarbonate"],
   objectives: ["cutouts", "demolition"],
   precision: 1,
-  maxThickness: 8,
+  maxThickness: 3.5,
   maxLong: 9999,
   maxWide: 9999,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A compact, one-hand, battery-powered saw. Its straight blade moves forward and back to make fast, rough cuts.",
+  operation: [
+    "Put on safety glasses, hearing protection, and gloves.",
+    "Remove the battery before you change the blade.",
+    "Install a blade that is correct for the material. Use a fine-tooth blade for metal.",
+    "Install the battery.",
+    "Attach the workpiece with a clamp. Support long pieces.",
+    "Put the shoe firmly against the workpiece.",
+    "Start the saw before the blade touches the workpiece.",
+    "Push the saw lightly. Do not force it.",
+    "Release the trigger. Wait until the blade stops before you remove it from the cut."
+  ],
+  safety: [
+    "Wear safety glasses, hearing protection, and gloves.",
+    "Make sure that there are no hidden wires or pipes behind the surface.",
+    "Keep the shoe against the workpiece during the cut. This decreases vibration and kickback.",
+    "Keep your other hand away from the blade.",
+    "Do not touch the blade after a cut. It can be hot.",
+    "Remove the battery before you change the blade."
+  ],
+  designedFor: [
+    "Rough cuts and demolition",
+    "Cuts in wood that contains nails",
+    "Cuts in pipe and in tight areas"
+  ],
+  notDesignedFor: [
+    "Accurate or clean cuts",
+    "Thin or soft materials",
+    "Wood thicker than 3-1/2 in"
+  ],
   video: ""
 },
 
@@ -189,14 +437,46 @@ const tools = [
   objectives: ["straight bore", "detailed bore"],
   precision: 3,
   maxThickness: 5,
-  maxLong: 10,
-  maxWide: 5,
+  maxLong: 22.25,
+  maxWide: 9.5,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A vertical knee mill with an 8 x 36 in table. It makes accurate holes, slots, and flat surfaces.",
+  operation: [
+    "Put on safety glasses with side shields.",
+    "Remove gloves, jewelry, and loose clothing. Tie back long hair.",
+    "Set the power switch to OFF before you change tools or speeds.",
+    "Install the cutter in an R-8 collet. Tighten the draw bar.",
+    "Remove the wrench and all other tools from the machine.",
+    "Attach the workpiece in the vise or with clamps.",
+    "Set the belt for the correct spindle speed for the cutter and the material.",
+    "Make sure that the cutter does not touch the workpiece.",
+    "Set the power switch to ON.",
+    "Move the table slowly with the handwheels until the cutter touches the workpiece.",
+    "Use conventional cuts. Do not use climb cuts on a manual mill.",
+    "Set the power switch to OFF. Wait for the spindle to stop.",
+    "Remove the chips with a brush."
+  ],
+  safety: [
+    "Wear safety glasses at all times.",
+    "Do not wear gloves near the spindle.",
+    "Always attach the workpiece mechanically. Do not hold it with your hand.",
+    "Remove all wrenches and keys before you start the spindle.",
+    "Keep your hands away from the cutter when the spindle turns.",
+    "Chips and cutters can be sharp and hot. Use a brush to remove chips.",
+    "Lock each axis that does not move during the cut.",
+    "Make adjustments only when the spindle is stopped."
+  ],
+  designedFor: [
+    "Accurate holes at exact locations",
+    "Slots, pockets, and flat surfaces",
+    "Parts with close tolerances"
+  ],
+  notDesignedFor: [
+    "Workpieces that you cannot attach to the table",
+    "Milling cutters in a drill chuck",
+    "Climb cuts",
+    "Large panels"
+  ],
   video: ""
 },
 
@@ -208,15 +488,45 @@ const tools = [
   materials: ["wood", "acrylic", "polycarbonate"],
   objectives: ["straight cuts", "long cuts"],
   precision: 2,
-  maxThickness: 3,
+  maxThickness: 3.125,
   maxLong: 9999,
-  maxWide: 36,
+  maxWide: 25.5,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A 10 in table saw with a safety brake. The brake stops the blade if the blade touches skin. It makes accurate straight cuts.",
+  operation: [
+    "Put on safety glasses and hearing protection.",
+    "Make sure that the riving knife and the blade guard are installed.",
+    "Set the blade height a little above the workpiece.",
+    "For a rip cut, set the fence to the width. Lock the fence.",
+    "For a crosscut, use the miter gauge. Move the fence away.",
+    "Set the power switch to ON. Let the blade get to full speed.",
+    "Hold the workpiece flat on the table and against the fence or the miter gauge.",
+    "Push the workpiece through the blade at a constant speed.",
+    "Use a push stick when your hand comes near the blade.",
+    "Push the workpiece fully past the blade.",
+    "Set the power switch to OFF. Wait for the blade to stop before you remove waste pieces."
+  ],
+  safety: [
+    "Wear safety glasses and hearing protection.",
+    "Always use the riving knife and the blade guard.",
+    "Stand to the side of the blade, out of the kickback path.",
+    "Do not cut freehand. Always use the fence or the miter gauge.",
+    "Do not use the fence and the miter gauge together.",
+    "Keep your hands out of the blade path.",
+    "Do not cut ferrous metal.",
+    "Aluminum, very wet wood, and wet pressure-treated wood can operate the brake. Use bypass mode only with teacher permission."
+  ],
+  designedFor: [
+    "Rip cuts along the grain",
+    "Crosscuts with the miter gauge",
+    "Boards and sheets up to 25-1/2 in wide"
+  ],
+  notDesignedFor: [
+    "Curves",
+    "Ferrous metal",
+    "Freehand cuts",
+    "Stock thicker than 3-1/8 in"
+  ],
   video: ""
 },
 
@@ -228,15 +538,42 @@ const tools = [
   materials: ["wood", "acrylic", "polycarbonate"],
   objectives: ["straight cuts", "long cuts"],
   precision: 3,
-  maxThickness: 2,
+  maxThickness: 2.125,
   maxLong: 48,
   maxWide: 36,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A battery-powered 6-1/2 in plunge saw that moves along a guide track. It makes clean, straight cuts in large sheets.",
+  operation: [
+    "Put on safety glasses and hearing protection.",
+    "Remove the battery before you make adjustments.",
+    "Set the cut depth to a maximum of 1/4 in more than the material thickness.",
+    "Put the material on a stable surface. Put a scrap board below it.",
+    "Align the edge of the track with the cut line. Attach the track with clamps.",
+    "Put the saw on the track. Install the battery.",
+    "Squeeze the trigger. Let the blade get to full speed.",
+    "Push the saw down to the set depth.",
+    "Push the saw along the track at a constant speed.",
+    "Release the trigger. Let the blade stop before you lift the saw."
+  ],
+  safety: [
+    "Wear safety glasses and hearing protection.",
+    "Hold the saw with two hands.",
+    "Set the cut depth for the material thickness. Too much depth increases the risk of kickback.",
+    "Make sure that the bevel lock and the depth lock are tight before the cut.",
+    "Attach the track and the material with clamps.",
+    "Let the blade stop before you lift the saw.",
+    "Connect a vacuum for dust collection."
+  ],
+  designedFor: [
+    "Large sheets and panels",
+    "Long straight cuts",
+    "Plunge cuts in the middle of a panel"
+  ],
+  notDesignedFor: [
+    "Curves",
+    "Small pieces",
+    "Material thicker than 2-1/8 in"
+  ],
   video: ""
 },
 
@@ -252,11 +589,39 @@ const tools = [
   maxLong: 10,
   maxWide: 10,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A bench machine with two 8 in abrasive wheels. It sharpens tools, removes burrs, and shapes small metal parts.",
+  operation: [
+    "Put on safety glasses and a face shield.",
+    "Examine the wheels for cracks and chips.",
+    "Adjust the work rest to 1/16 in from the wheel.",
+    "Adjust the eye shields and the spark guards.",
+    "Stand to the side of the wheel. Set the power switch to ON.",
+    "Let the wheel get to full speed.",
+    "Put the workpiece on the work rest.",
+    "Push the workpiece lightly against the face of the wheel. Move it across the wheel.",
+    "Put the workpiece in the coolant tray frequently to cool it.",
+    "Set the power switch to OFF. Let the wheels stop. Do not use the workpiece to stop the wheel."
+  ],
+  safety: [
+    "Wear safety glasses and a face shield.",
+    "Make sure that all guards and eye shields are installed.",
+    "Do not grind on the side of the wheel.",
+    "Do not hold the workpiece with gloves, a cloth, or pliers.",
+    "Do not grind small parts that you cannot hold safely.",
+    "Do not grind wood or plastic. They clog and damage the wheel.",
+    "Do not leave the grinder when it operates.",
+    "Keep flammable materials away from the sparks."
+  ],
+  designedFor: [
+    "Edges on chisels, drill bits, and blades",
+    "Burr removal on metal parts",
+    "Small changes to the shape of metal parts"
+  ],
+  notDesignedFor: [
+    "Wood, plastic, or soft metals such as aluminum",
+    "Large parts",
+    "Use of the side of the wheel"
+  ],
   video: ""
 },
 
@@ -266,17 +631,47 @@ const tools = [
 
   
   materials: ["metal",],
-  objectives: ["curved cuts", "surface finishing"],
+  objectives: ["straight cuts", "surface finishing"],
   precision: 2,
   maxThickness: 3,
   maxLong: 9999,
   maxWide: 9999,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A battery-powered handheld grinder with a 4-1/2 in disc. It cuts and grinds metal.",
+  operation: [
+    "Put on safety glasses, a face shield, hearing protection, and gloves.",
+    "Remove the battery before you change the disc or the guard.",
+    "Install the correct disc. Use a cutoff disc to cut. Use a grinding disc to grind.",
+    "Make sure that the speed rating of the disc is more than the speed of the grinder.",
+    "Adjust the guard so that it is between the disc and you.",
+    "Install the side handle. Install the battery.",
+    "Attach the workpiece with a clamp or a vise.",
+    "Hold the grinder with two hands. Start it away from the workpiece.",
+    "Let the disc get to full speed.",
+    "To grind, hold the disc at 15 to 30 degrees to the surface.",
+    "To cut, keep the disc straight in the cut. Do not twist or bend the disc.",
+    "Release the switch. Let the disc stop before you put the grinder down."
+  ],
+  safety: [
+    "Wear safety glasses, a face shield, and hearing protection.",
+    "Always use the guard and the side handle.",
+    "Do not use a cutoff disc to grind. Do not use a grinding disc to cut.",
+    "Let a new disc turn freely for 1 minute before use.",
+    "Keep flammable materials away from the sparks.",
+    "Stand to the side of the disc path. A broken disc can throw fragments.",
+    "Do not apply force to stop the disc.",
+    "Do not put the grinder down until the disc stops."
+  ],
+  designedFor: [
+    "Straight cuts in metal bar, tube, and sheet",
+    "Removal of welds and burrs",
+    "Removal of rust and paint"
+  ],
+  notDesignedFor: [
+    "Curved cuts",
+    "Wood or plastic",
+    "Accurate cuts"
+  ],
   video: ""
 },
 
@@ -288,15 +683,45 @@ const tools = [
   materials: ["metal",],
   objectives: ["precise cuts"],
   precision: 3,
-  maxThickness: 0.5,
-  maxLong: 36,
+  maxThickness: 0.39,
+  maxLong: 24,
   maxWide: 24,
 
-  summary: "...",
-  operation: ["...", "..."],
-  safety: ["...", "..."],
-  designedFor: ["..."],
-  notDesignedFor: ["..."],
+  summary: "A 1200 W fiber laser on a CNC cutter table. It cuts carbon steel sheet up to 0.39 in thick in a 24 x 24 in area.",
+  operation: [
+    "Get approval from the Laser Safety Officer before you use the machine.",
+    "Put on laser safety goggles, heat-resistant gloves, and long sleeves.",
+    "Make sure that the gas supply and the fume extraction operate.",
+    "Remove flammable materials from the area.",
+    "Put the metal sheet flat on the cutter table.",
+    "Open the design in the xTool software. Select the material and the thickness.",
+    "Make sure that the design fits in the working area.",
+    "Make sure that all persons in the laser area wear laser safety goggles.",
+    "Start the job. Watch the machine during the full job.",
+    "When the job is complete, turn off 'Enable lasering' on the touchscreen.",
+    "Let the metal cool. Remove it with gloves."
+  ],
+  safety: [
+    "This is a Class 4 laser. Use it only with approval from the teacher and the Laser Safety Officer.",
+    "All persons in the laser area must wear goggles rated OD 6+ at 1080 nm.",
+    "Do not look at the laser beam or its reflections.",
+    "Wear heat-resistant gloves and long sleeves. The laser and hot metal can burn skin.",
+    "Use the fume extraction at all times. Metal fumes are dangerous.",
+    "Keep a fire extinguisher near the machine. Remove flammable materials.",
+    "Do not leave the machine when it operates.",
+    "After the job, turn off 'Enable lasering' to prevent an accidental laser emission."
+  ],
+  designedFor: [
+    "Precise cuts in steel, stainless steel, aluminum, and brass sheet",
+    "Complex flat shapes",
+    "Many parts from one file"
+  ],
+  notDesignedFor: [
+    "Wood, plastic, or other materials that are not metal",
+    "Metal thicker than 0.39 in",
+    "Parts larger than 24 x 24 in",
+    "Use without a trained operator"
+  ],
   video: ""
 },
 ]
