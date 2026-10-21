@@ -49,7 +49,8 @@ header {
 header img { height: 3rem; }
 
 nav { display: flex; gap: 0.5rem; }
-nav a {
+nav a,
+.big-button {
   background: var(--red);
   color: var(--cream);
   padding: 0.4rem 0.8rem;
@@ -71,6 +72,21 @@ footer {
   border-top: 3px solid navy;
   margin-top: 2rem;
   font-size: 0.8rem;
+}
+
+label {
+  display: block;            /* each label takes a full line */
+  margin-bottom: 1rem;       /* space between fields */
+}
+select, input {
+  display: block;            /* the control drops below its label text */
+  width: 100%;               /* fill the line... */
+  max-width: 20rem;          /* ...but not stretch across a wide screen */
+  font: inherit;             /* use Norwester; form controls ignore your font by default */
+  padding: 0.4rem;
+  border: 3px solid var(--navy);
+  background: var(--cream);
+  color: var(--navy);
 }
 
 @media (max-width: 480px) {
