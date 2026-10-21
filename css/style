@@ -1,0 +1,16 @@
+:root {
+  --cream: #faeeda;
+  --navy: #002657;
+  --red: #fc3f3f;
+}
+
+@font-face {
+  font-family: "Norwester";
+  src: url("../fonts/norwester/norwester.otf") format("opentype");
+}
+
+body {
+  background: var(--cream);
+  color: var(--navy);
+  font-family: "Norwester", sans-serif;
+}

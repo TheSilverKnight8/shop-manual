@@ -519,7 +519,7 @@ const tools = [
   designedFor: [
     "Rip cuts along the grain",
     "Crosscuts with the miter gauge",
-    "Boards and sheets up to 25-1/2 in wide"
+    "Boards and sheets up to 48 in wide"
   ],
   notDesignedFor: [
     "Curves",
