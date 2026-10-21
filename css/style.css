@@ -38,3 +38,26 @@ body {
 li { 
   margin-bottom: 0.3rem; 
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+header img { height: 3rem; }
+
+nav { display: flex; gap: 0.5rem; }
+nav a {
+  background: var(--red);
+  color: var(--cream);
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+  html { font-size: 14px; }
+  header { flex-direction: column; }
+}

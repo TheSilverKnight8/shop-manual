@@ -13,4 +13,12 @@ links.forEach(function (l) {
   nav.appendChild(a);
 });
 
-document.body.prepend(nav);
+const header = document.createElement("header");
+
+const logo = document.createElement("img");
+logo.src = "images/logo.png";
+logo.alt = "Croswell Industries: Making Your Life Easier";   // describes the image for screen readers
+
+header.appendChild(logo);
+header.appendChild(nav);
+document.body.prepend(header);
