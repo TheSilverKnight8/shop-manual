@@ -44,12 +44,13 @@ function refreshSizes() {
     });
   }
 
-  fillObjects(objSelect, pool.flatMap(function (p) { return p.sizes; }));
-  objSelect.value = previous;
+    fillOptions(objSelect, pool.flatMap(function (b) { return b.objectives; }));
+    objSelect.value = previous;
 }
 
 fillOptions(matSelect, tools.flatMap(function (b) { return b.materials; }));
 refreshSizes();
+matSelect.addEventListener("change", refreshSizes);
 
 function readPositive(input) {
   const n = Number(input.value);
