@@ -20,8 +20,13 @@ const message = document.getElementById("message");
 const resultsList = document.getElementById("results");
 
 function fillOptions(select, values) {
-  const unique = Array.from(new Set(values)).sort();
-  unique.forEach(function (v) {
+    select.innerHTML = "";
+    const blank = document.createElement("option");
+    blank.value = "";
+    blank.textContent = "Choose…";
+    select.appendChild(blank);  
+    const unique = Array.from(new Set(values)).sort();
+    unique.forEach(function (v) {
     const option = document.createElement("option");
     option.value = v;
     option.textContent = v;
@@ -29,8 +34,22 @@ function fillOptions(select, values) {
   });
 }
 
+function refreshSizes() {
+  const previous = objSelect.value;
+
+  let pool = tools;
+  if (matSelect.value !== "") {
+    pool = tools.filter(function (b) {
+      return b.materials.includes(matSelect.value);
+    });
+  }
+
+  fillSizes(sizeSelect, pool.flatMap(function (p) { return p.sizes; }));
+  sizeSelect.value = previous;                 // put the choice back if it still exists
+}
+
 fillOptions(matSelect, tools.flatMap(function (b) { return b.materials; }));
-fillOptions(objSelect, tools.flatMap(function (b) { return b.objectives; }));
+refreshSizes();
 
 function readPositive(input) {
   const n = Number(input.value);          // "" becomes 0, text becomes NaN
