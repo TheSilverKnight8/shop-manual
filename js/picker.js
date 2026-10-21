@@ -44,19 +44,19 @@ function refreshSizes() {
     });
   }
 
-  fillSizes(sizeSelect, pool.flatMap(function (p) { return p.sizes; }));
-  sizeSelect.value = previous;                 // put the choice back if it still exists
+  fillObjects(objSelect, pool.flatMap(function (p) { return p.sizes; }));
+  objSelect.value = previous;
 }
 
 fillOptions(matSelect, tools.flatMap(function (b) { return b.materials; }));
 refreshSizes();
 
 function readPositive(input) {
-  const n = Number(input.value);          // "" becomes 0, text becomes NaN
+  const n = Number(input.value);
   if (input.value === "" || isNaN(n) || n <= 0) {
-    return null;                          // "this box is invalid"
+    return null;
   }
-  return n;                               // otherwise, hand back the number
+  return n;
 }
 
 goButton.addEventListener("click", function () {
